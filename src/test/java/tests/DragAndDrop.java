@@ -20,6 +20,7 @@ public class DragAndDrop {
     @Test
     void DragAndDrop (){
     open("https://the-internet.herokuapp.com/drag_and_drop");
-
+    $("#column-a").dragAndDropTo("#column-b");
+sleep(1000);
     }
 }
