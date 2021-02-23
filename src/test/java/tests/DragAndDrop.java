@@ -19,7 +19,7 @@ public class DragAndDrop {
 }
     // маленькая диагональ дисплея
     @Test
-    void DragAndDrop (){
+    void DragAndDropTest (){
     open("https://the-internet.herokuapp.com/drag_and_drop");
     $("#column-a").shouldHave(text("A"));
     $("#column-b").shouldHave(text("B"));
