@@ -17,10 +17,16 @@ public class DragAndDrop {
     static void setup(){
         Configuration.startMaximized = true;
 }
+    // маленькая диагональ дисплея
     @Test
     void DragAndDrop (){
     open("https://the-internet.herokuapp.com/drag_and_drop");
-    $("#column-a").dragAndDropTo("#column-b");
-sleep(1000);
+    $("#column-a").shouldHave(text("A"));
+    $("#column-b").shouldHave(text("B"));
+    sleep(3000);
+    actions().moveToElement($("#column-a")).clickAndHold().moveByOffset(200, 0).release().perform();
+    // $("#column-a").dragAndDropTo("#column-b"); не работает
+    $("#column-a").shouldHave(text("B"));
+    $("#column-b").shouldHave(text("A"));
     }
 }
